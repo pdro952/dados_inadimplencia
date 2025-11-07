@@ -1,0 +1,19 @@
+services:
+  inadimplencia-app:
+    # A instrução 'build' diz ao Docker Compose para construir a imagem a partir do Dockerfile
+    build: .
+    
+
+    ports:
+      - "3090:3090"
+    
+    # Define o nome do contêiner para facilitar o gerenciamento
+    container_name: inadimplencia-app-container
+    
+    # Reinicia o contêiner automaticamente se ele parar por algum motivo (a menos que seja uma parada manual)
+    restart: unless-stopped
+    
+    # Monta o diretório de log do supervisor como um volume. Isso é útil para inspecionar os logs
+    # Se você quiser que os logs persistam mesmo após o contêiner ser removido, use um volume nomeado aqui
+    # volumes:
+    #   - ./logs:/var/log/supervisor

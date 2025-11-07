@@ -1,0 +1,10 @@
+streamlit
+pandas
+plotly
+requests
+humanize
+streamlit-cookies-manager==0.2.0
+XlsxWriter
+python-dotenv
+sqlalchemy
+oracledb
