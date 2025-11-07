@@ -1,0 +1,11 @@
+[server]
+port = 3090
+sslCertFile = "./.cert/cert.pem"
+sslKeyFile = "./.cert/cert.key"
+baseUrlPath = "/inadimplencia-particular"
+
+[theme]
+base = "dark"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#4ABFA1"
+textColor = "#038E83"
