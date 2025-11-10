@@ -23,13 +23,13 @@ def render_filters(df):
     st.sidebar.header('Filtros')
 
     # Ano
-    anos_disponiveis = sorted(df['ano'].unique().tolist()) if 'ano' in df.columns else []
+    anos_disponiveis = sorted(df['ano'].unique().tolist()) if df is not None and 'ano' in df.columns else []
     anos_disponiveis = [str(a) for a in anos_disponiveis]
     anos_disponiveis.insert(0, 'Todos os Anos')
     ano_selecionado = st.sidebar.selectbox('Selecione o Ano', anos_disponiveis)
 
     # Empresa (se existir)
-    if 'cd_multi_empresa' in df.columns:
+    if df is not None and 'cd_multi_empresa' in df.columns:
         empresas_disponiveis = sorted(df['cd_multi_empresa'].unique().tolist())
         empresas_disponiveis = [str(e) for e in empresas_disponiveis]
         empresas_disponiveis.insert(0, 'Todas as Empresas')
